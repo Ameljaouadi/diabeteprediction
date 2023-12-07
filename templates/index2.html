@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Diabete Prediction</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='/css/stylee.css') }}?v=2">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap JS and Popper.js -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div>
+    <nav class="navbar navbar-expand-md navbar-dark ">
+        <div class="container">
+            <a class="navbar-brand" href="/">D2P</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Predict</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/description">Description</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<div class="grandDiv">
+     <div class="card">
+ <div class="login">
+     <div class="image0">
+      <img src="{{ url_for('static', filename='mesimages/nv.PNG') }}" alt="Your Image">
+         <h1>Diabetes Predictor</h1>
+  </div>
+
+
+
+    <form action="{{ url_for('predict')}}"method="post">
+
+        <input type="text" name="Glucose Level" placeholder="Glucose Level" required="required" />
+    	<input type="text" name="Blood Presure" placeholder="Blood Presure" required="required" />
+        <input type="text" name="BMI" placeholder="BMI" required="required" />
+        <input type="text" name="Age" placeholder="Age" required="required" />
+
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+
+
+
+
+
+
+
+
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</div>
+</div>
+
+</body>
+</html>
