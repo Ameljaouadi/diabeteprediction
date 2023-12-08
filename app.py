@@ -20,7 +20,7 @@ matplotlib.use('Agg')
 
 dataset = pd.read_csv('diabetes.csv')
 
-dataset_X = dataset.iloc[:,[1, 2, 5, 7]].values
+dataset_X = dataset.iloc[:,[1, 4, 5, 7]].values
 
 from sklearn.preprocessing import MinMaxScaler
 sc = MinMaxScaler(feature_range = (0,1))
@@ -78,7 +78,7 @@ def predict():
     prediction = model.predict( sc.transform(final_features) )
 
     if prediction == 1:
-        pred = "Vous avez un haut risque d'attrapper le Diabète! Veuillez consulter un docteur."
+        pred = "You have a high risk of developing Diabetes!"
     elif prediction == 0:
         pred = "You don't have Diabetes."
     output = pred

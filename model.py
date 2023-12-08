@@ -40,7 +40,7 @@ dataset = pd.read_csv('diabetes.csv')
 # In[13]:
 
 
-dataset_X = dataset.iloc[:,[1,2,3, 4, 5,6, 7]].values
+dataset_X = dataset.iloc[:,[1, 4, 5, 7]].values
 dataset_Y = dataset.iloc[:,8].values
 
 
