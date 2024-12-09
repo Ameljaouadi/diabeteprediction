@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./static:/app/static  # Synchroniser le dossier 'static' local avec le conteneur
+      - ./templates:/app/templates  # Synchroniser le dossier 'templates' local
+    environment:
+      FLASK_ENV: development
+    command: python app.py
